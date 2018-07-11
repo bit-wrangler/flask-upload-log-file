@@ -10,5 +10,5 @@ class LogUpload(Resource):
 
         return {
             "uuid":uuid,
-            "file_data":"{}".format(data['file'].read(10))
+            "file_data":"{}".format(data['file'][0].read().decode("utf-8") )
         }
