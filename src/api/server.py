@@ -1,7 +1,5 @@
 from flask import Flask
 from flask_restful import Api
-import werkzeug
-
 from resources.logUpload import LogUpload
 
 
