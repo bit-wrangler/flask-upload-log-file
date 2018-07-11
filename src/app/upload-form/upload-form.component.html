@@ -1,0 +1,13 @@
+<form
+  #form="ngForm"
+  (ngSubmit)="onSubmit(form)">
+  <div class="form-group">
+    <label for="file">File</label>
+    <input
+    required
+    ngModel name="file" #file="ngModel"
+    (change)="getFile($event)"
+    id="file" type="file" class="form-control-file">
+  </div>
+  <button class="btn btn-success" type="submit" [disabled]="form.invalid">Submit</button>
+</form>
