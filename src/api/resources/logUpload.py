@@ -4,7 +4,11 @@ import werkzeug
 class LogUpload(Resource):
     def post(self, uuid):
         parser = reqparse.RequestParser()
-        parser.add_argument('files',type=werkzeug.datastructures.FileStorage, location='files', action='append')
+        parser.add_argument('file',type=werkzeug.datastructures.FileStorage, location='files', action='append')
         data = parser.parse_args()
 
-        return ":)"
+
+        return {
+            "uuid":uuid,
+            "file_data":"{}".format(data['file'].read(10))
+        }

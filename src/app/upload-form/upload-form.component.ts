@@ -20,8 +20,8 @@ export class UploadFormComponent implements OnInit {
     let formData: FormData = new FormData();
     formData.append('file', this.file, this.file.name);
     let headers: Headers = new Headers();
-    headers.append('Content-Type', 'multipart/form-data');
-    headers.append('Accept','application/json');
+    //headers.append('Content-Type', 'multipart/form-data');
+    //headers.append('Accept','application/json');
 
     this.http.post(
       'http://localhost:5000/upload-log/foobar',
